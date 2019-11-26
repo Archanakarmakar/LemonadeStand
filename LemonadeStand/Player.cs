@@ -12,7 +12,19 @@ namespace LemonadeStand
         Pitcher pitcher1 = new Pitcher();
         Wallet wallet1 = new Wallet();
         Recipe recipe1 = new Recipe();
-        Inventory inventory1 = new Inventory(); 
+        Inventory inventory1 = new Inventory();
+        public Inventory inventory;
+        public Wallet wallet;
+
+        // constructor (SPAWNER)
+        public Player()
+        {
+            inventory = new Inventory();
+            wallet = new Wallet();
+        }
+
+        // member methods (CAN DO)
+    }
     Player()
     {   
     }

@@ -13,11 +13,17 @@ namespace LemonadeStand
         int amountOfIceCubes;
         double pricePerCup;
         public Recipe()
-        {
+        {       
+
 
         }
+        
         public void PrepareRecipe()
         {
+            pricePerCup = UserInterface.GetCupPrice();
+            amountOfIceCubes = UserInterface.GetRecipeAmount();
+            amountOfLemons = UserInterface.
+
 
         }
     }

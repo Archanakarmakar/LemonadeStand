@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class IceCube :Item
+    public class IceCube :Item
     {
+        public IceCube()
+        {
+            name = "ice cube";
+        }
+        public override void ChooseItem()
+        {
+
+        }
     }
 }

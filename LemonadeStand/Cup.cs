@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Cup:Item
+    class Cup : Item
     {
+        public Cup()
+        {
+            name = "cup";
+        }
+        public override void ChooseItem()
+        {
+
+        }
+
     }
 }

@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-     public abstract class Item
+    public abstract class Item
     {
-        string name;
+    public string name;
+        static Item()
+        {
+
+        }
+
+
+
+
+        public abstract void ChooseItem();
     }
-    public abstract void  ChooseItem();
 }
+

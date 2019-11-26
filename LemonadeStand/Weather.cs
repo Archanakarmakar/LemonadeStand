@@ -12,7 +12,6 @@ namespace LemonadeStand
         public List<string> conditions;
         public int TempHigh;
         Random random;
-        int totalDays = 100;
         int maxTemp = 35;
         int minTemp = 98;
         public Weather(Random random)
@@ -54,7 +53,7 @@ namespace LemonadeStand
         {
           int randomCondition =  random.Next(0, 8);
             condition = conditions[randomCondition];
-
+            Console.WriteLine(condition);
         }
     }
 }

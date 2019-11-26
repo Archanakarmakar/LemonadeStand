@@ -12,10 +12,10 @@ namespace LemonadeStand
         {
              
         }
-       /* public override void ChooseItem()
+        public override void ChooseItem()
         {
 
-        } */
+        } 
 
     }
 }
