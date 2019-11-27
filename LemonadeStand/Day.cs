@@ -8,25 +8,24 @@ namespace LemonadeStand
 {
     public class Day
     {
-        List<Weather> conditions;
+        public Weather weather;
         List<Customer> customers;
         int dayNumber;
         Random random;
+        public string day1;
 
-    public Day()
-    { 
-      conditions = new List<Weather>();
-      customers = new List<Customer>();
-      //CreateCustomers();
-     
-        }
-    public void CreateEachDayShow()
+        public Day()
         {
             random = new Random();
-           
-            }
+            weather = new Weather(random);
+            customers = new List<Customer>();
 
+            //CreateCustomers();
 
         }
+
+
+
     }
+}
 

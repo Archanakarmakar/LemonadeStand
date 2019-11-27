@@ -14,10 +14,12 @@ namespace LemonadeStand
             cupsLeftInPitcher = 0;
         }
 
-        public void CreatePitcher()
+        public static void CreatePitcher(Inventory inventory, Recipe recipe)
         {
-            //take away from play inventory based on recipe amount
-            //reset cupsLeftInPitcher = 10;
+            inventory.lemons.RemoveRange(0, recipe.amountOfLemons);
+            inventory.iceCubes.RemoveRange(0, recipe.amountOfIceCubes);
+            inventory.sugarCubes.RemoveRange(0, recipe.amountOfSugarCubes);
+          //  inventory.cups.RemoveRange(0, recipe.cups);
         }
     }
 }

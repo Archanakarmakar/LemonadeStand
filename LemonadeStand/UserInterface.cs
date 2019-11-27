@@ -30,9 +30,24 @@ namespace LemonadeStand
             Console.WriteLine("How much do you want to charge per cup?");
             return double.Parse(Console.ReadLine());
         }
-        public static void GetRecipeAmount()
+        public static int GetRecipeForIceCube()
         {
+            Console.WriteLine("How many ice cube do you want to add ");
+            return Convert.ToInt32(Console.ReadLine());
+        }
+        public static int GetRecipeForLemons()
+        {
+            Console.WriteLine("How many ice cube do you want to add ");
+            return Convert.ToInt32(Console.ReadLine());
 
         }
+        public static int GetRecipeForSugarCubes()
+        {
+            Console.WriteLine("How many ice cube do you want to add ");
+            return Convert.ToInt32(Console.ReadLine());
+
+        }
+
+
     }
 }

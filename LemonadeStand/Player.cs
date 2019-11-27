@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    public  class Player
+    public class Player
     {
-        string name;
-        
-        Pitcher pitcher1 = new Pitcher();
-        Recipe recipe1 = new Recipe();
-        Inventory inventory1 = new Inventory();
-        Wallet wallet1 = new Wallet();
+       public string name;
+       public Pitcher pitcher = new Pitcher();
+       public Recipe recipe = new Recipe();
+       public Inventory inventory = new Inventory();
+       public Wallet wallet = new Wallet();
 
         // constructor (SPAWNER)
         public Player()
@@ -23,6 +22,6 @@ namespace LemonadeStand
 
         // member methods (CAN DO)
     }
-   
-    }
+
+}
 

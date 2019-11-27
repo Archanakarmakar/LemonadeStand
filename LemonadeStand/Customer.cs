@@ -10,11 +10,19 @@ namespace LemonadeStand
     {
         List<string> names;
         string name;
-
-
-       public Customer()
+        Random random = new Random();
+        public Customer()
         {
-            names = new List<string>();
+            names = new List<string> { "John", "Susan", "Mike", "Ram", "Denise", "Lori ", "Jasmine", "Alex" };
+        }
+        public void CreateRandomCustomerName()
+        {
+            int randomName = random.Next(0, 8);
+            name = names[randomName];
+            Console.WriteLine(name);
+
         }
     }
+
 }
+

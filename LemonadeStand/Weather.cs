@@ -10,7 +10,7 @@ namespace LemonadeStand
     {
         public string condition;
         public List<string> conditions;
-        public int TempHigh;
+        public int temparature;
         Random random;
         int maxTemp = 35;
         int minTemp = 98;
@@ -18,8 +18,9 @@ namespace LemonadeStand
         {
             this.random = random;
             conditions = new List<string>();
-            this.TempHigh = random.Next(minTemp, maxTemp);
+            temparature = random.Next(minTemp, maxTemp);
             CreateConditionsList();
+            RandomChangeCondition();
 
         }
         public int MaxTemp
@@ -54,6 +55,39 @@ namespace LemonadeStand
           int randomCondition =  random.Next(0, 8);
             condition = conditions[randomCondition];
             Console.WriteLine(condition);
+        }
+
+        public void RandomTemparature()
+        {
+            switch (condition)
+            {
+                case "Freezing":
+                    temparature = random.Next(0, 32);
+                    break;
+                case "Thunder storms":
+                    temparature = random.Next(30, 43);
+                    break;
+                case "Partly sunny":
+                    temparature = random.Next(38, 60);
+                    break;
+                case "Partly cloudy":
+                    temparature = random.Next(38, 42);
+                    break;
+                case "Mostly cloudy":
+                    temparature = random.Next(36, 43);
+                    break;
+                case "Mostly Sunny":
+                    temparature = random.Next(37, 80);
+                    break;
+                case "Partly cloudy with scattered rain showers":
+                    temparature = random.Next(30, 60);
+                    break;
+                case "Mostly cloudy with scattered rain showers":
+                    temparature = random.Next(67, 72);
+                    break;
+
+
+            }
         }
     }
 }

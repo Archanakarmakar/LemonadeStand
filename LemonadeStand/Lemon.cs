@@ -10,7 +10,7 @@ namespace LemonadeStand
     {
         public Lemon()
         {
-             
+            name = "lemon";   
         }
         public override void ChooseItem()
         {

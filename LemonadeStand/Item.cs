@@ -9,15 +9,15 @@ namespace LemonadeStand
     public abstract class Item
     {
     public string name;
+
         static Item()
         {
 
         }
-
-
-
-
         public abstract void ChooseItem();
+        
+     
+        
     }
 }
 

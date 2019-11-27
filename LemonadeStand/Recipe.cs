@@ -6,25 +6,26 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Recipe
+    public class Recipe
     {
-        int amountOfLemons;
-        int amountOfSugarCubes;
-        int amountOfIceCubes;
+        public int amountOfLemons;
+        public int amountOfSugarCubes;
+        public int amountOfIceCubes;
         double pricePerCup;
         public Recipe()
-        {       
-
+        {
+            this.amountOfLemons = 0;
+            this.amountOfIceCubes = 0;
+            this.amountOfSugarCubes = 0;
 
         }
         
         public void PrepareRecipe()
         {
             pricePerCup = UserInterface.GetCupPrice();
-            amountOfIceCubes = UserInterface.GetRecipeAmount();
-            amountOfLemons = UserInterface.
-
-
+            amountOfIceCubes = UserInterface.GetRecipeForIceCube();
+            amountOfLemons = UserInterface.GetRecipeForLemons();
+            amountOfSugarCubes = UserInterface.GetRecipeForSugarCubes(); 
         }
     }
     
