@@ -11,7 +11,7 @@ namespace LemonadeStand
         public int amountOfLemons;
         public int amountOfSugarCubes;
         public int amountOfIceCubes;
-        double pricePerCup;
+        public double pricePerCup;
         public Recipe()
         {
             this.amountOfLemons = 0;

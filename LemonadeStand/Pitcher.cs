@@ -19,7 +19,7 @@ namespace LemonadeStand
             inventory.lemons.RemoveRange(0, recipe.amountOfLemons);
             inventory.iceCubes.RemoveRange(0, recipe.amountOfIceCubes);
             inventory.sugarCubes.RemoveRange(0, recipe.amountOfSugarCubes);
-          //  inventory.cups.RemoveRange(0, recipe.cups);
+            inventory.cups.RemoveRange(0, cupsLeftInPitcher);
         }
     }
 }
