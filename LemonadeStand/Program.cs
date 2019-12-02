@@ -12,11 +12,11 @@ namespace LemonadeStand
         static void Main(string[] args)
         {
             Game mygame = new Game();
-            // mygame.Run();
-            Day day = new Day();
-            day.RunDay();
-            day.DisplayWeather();
-            mygame.Run();
+             mygame.Run();
+            //Day day = new Day();
+           // day.RunDay();
+           // day.DisplayWeather();
+           // mygame.Run();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace LemonadeStand
 {
     public class Pitcher
     {
-        static int cupsLeftInPitcher = 10;
+        static int cupsLeftInPitcher;
         public Pitcher()
         {
             cupsLeftInPitcher = 0;
@@ -20,6 +20,7 @@ namespace LemonadeStand
             inventory.iceCubes.RemoveRange(0, recipe.amountOfIceCubes);
             inventory.sugarCubes.RemoveRange(0, recipe.amountOfSugarCubes);
             inventory.cups.RemoveRange(0, cupsLeftInPitcher);
+            cupsLeftInPitcher = 10;
         }
     }
 }

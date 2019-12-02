@@ -30,12 +30,13 @@ namespace LemonadeStand
         }
         public void DisplayWeather()
         {
-            // for (int i = 1; i < dayCount; i++)
-            //{
+
             Console.WriteLine("Looks like it is " + condition + " outside. of Day :" + dayCount + "With a high of " + temperature + ".");
             Console.ReadLine();
-            //  }
+
         }
+
+
         private void ChooseNumberOfCustomers(string condition)
         {
             switch (condition)
@@ -71,6 +72,39 @@ namespace LemonadeStand
 
             }
         }
+
+
+        public void SimulateDay()
+        {
+            Console.WriteLine("Lemonade Recipe Game\n\n");
+            // Player.PrepareRecipe();
+            Console.WriteLine("\n\n Cup Per Pitcher:\n[1]Go to store \n\n[2] Play Again");
+            string userInput = Console.ReadLine();
+            foreach(Customer customer in customers)
+            { 
+            if (userInput != "1" && userInput != "2")
+            {
+                Console.Clear();
+                //RecipeMenu();
+                return;
+            }
+            int userInputNum = int.Parse(userInput);
+                switch (userInputNum)
+                {
+                    case 1:
+                        //Console.Clear();
+                        DisplayWeather();
+                       // double totalprice = Player.Store.CalculateTransactionAmount(itemcount, itemPricePerUnit);
+                        break;
+
+                    case 2:
+                       // Console.Clear();
+                        PlayAgainOption();
+                        break;
+
+                }
+            }
+        }
         private void GetCustomers(int customerCount)
         {
 
@@ -78,6 +112,17 @@ namespace LemonadeStand
             {
                 Customer customer = new Customer(temperature, random);
                 customers.Add(customer);
+            }
+
+        }
+        private void PlayAgainOption()
+        {
+            Console.WriteLine("Would you like to play again?");
+            string userInput = Console.ReadLine();
+            if (userInput == "yes" || userInput == "Yes" || userInput == "y" || userInput == "Y")
+            {
+                Console.Clear();
+                SimulateDay();
             }
         }
     }

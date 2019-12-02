@@ -13,6 +13,7 @@ namespace LemonadeStand
        public Store store;
        Random rand = new Random();
        public int temp;
+       public int daysCount = 7;
         
 
 
@@ -34,18 +35,20 @@ namespace LemonadeStand
             }
         }
         
+        // 
+        
         public void Run()
         {
-            CreateShowDayByWeather();
-            Customer customer = new Customer(temp,rand);
-            customer.CreateRandomCustomerName();
-            Recipe recipe = new Recipe();
-            recipe.PrepareRecipe();
-            store.SellCups(player);
-            store.SellIceCubes(player);
-            store.SellLemons(player);
-            store.SellSugarCubes(player);
-            
+            for (int i = 1; i < days.Count; i++)
+            {
+                Console.WriteLine("You are on day " + i + " of 7");
+                
+                //store.SellIceCubes(player);
+                //store.SellLemons(player);
+                //store.SellSugarCubes(player);
+               days[i - 1].SimulateDay();
+
+            }
         }
     }
 
