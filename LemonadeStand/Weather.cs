@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-   public class Weather
+    public class Weather
     {
         public string condition;
         public List<string> conditions;
         public int temparature;
         Random random;
-        int maxTemp = 98;
+        int maxTemp = 101;
         int minTemp = 0;
         public Weather(Random random)
         {
@@ -45,16 +45,16 @@ namespace LemonadeStand
             conditions.Add("Partly sunny");
             conditions.Add("Partly cloudy");
             conditions.Add("Mostly cloudy");
-            conditions.Add("Partly cloudy with scattered rain showers");
-            conditions.Add("Mostly cloudy with scattered rain showers");
+            conditions.Add("Rainy");
             conditions.Add("Thunder storms");
             conditions.Add("Freezing ");
         }
-        public void RandomChangeCondition()
+        public string RandomChangeCondition()
         {
-          int randomCondition =  random.Next(0, 8);
+            int randomCondition = random.Next(0, 7);
             condition = conditions[randomCondition];
-          //  Console.WriteLine(condition);
+            return condition;
+            //  Console.WriteLine(condition);
         }
 
         public void RandomTemparature()
@@ -63,41 +63,34 @@ namespace LemonadeStand
             {
                 case "Freezing":
                     temparature = random.Next(0, 32);
-                    Console.WriteLine(temparature);
                     break;
                 case "Thunder storms":
                     temparature = random.Next(30, 43);
-                    Console.WriteLine(temparature);
                     break;
                 case "Partly sunny":
                     temparature = random.Next(38, 60);
-                    Console.WriteLine(temparature);
                     break;
                 case "Partly cloudy":
                     temparature = random.Next(38, 42);
-                    Console.WriteLine(temparature);
                     break;
                 case "Mostly cloudy":
                     temparature = random.Next(36, 43);
-                    Console.WriteLine(temparature);
                     break;
                 case "Mostly Sunny":
                     temparature = random.Next(37, 80);
-                    Console.WriteLine(temparature);
                     break;
-                case "Partly cloudy with scattered rain showers":
-                    temparature = random.Next(30, 60);
-                    Console.WriteLine(temparature);
-                    break;
-                case "Mostly cloudy with scattered rain showers":
+                case "Rainy":
                     temparature = random.Next(67, 72);
-                    Console.WriteLine(temparature);
                     break;
 
 
             }
-            
-            Console.ReadLine();
+        }
+        public int GetTemp()
+        {
+            int temp;
+            temp = random.Next(0, 101);
+            return temp;
         }
     }
 }

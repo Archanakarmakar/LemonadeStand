@@ -11,25 +11,25 @@ namespace LemonadeStand
         public List<string> names;
         public string name;
         public Weather weather;
-        public Random random;
+        int temp;
+        Random r;
 
-
-        public Customer()
+        public Customer(int temp, Random r)
+        
         {
+            this.temp = temp;
+            this.r = r;
+            r = new Random();
             names = new List<string> { "John", "Susan", "Mike", "Ram", "Denise", "Lori ", "Jasmine", "Alex" };
-             weather = new Weather(random);
-             random = new Random();
         }
+
         public void CreateRandomCustomerName()
         {
-            int randomName = random.Next(0, 8);
+            int randomName = r.Next(0, 8);
             name = names[randomName];
             Console.WriteLine("Customer name......." + name);
         }
-        public void CreateCustomerDecisionMaking()
-        {
-
-        }
+        
 
     }
 

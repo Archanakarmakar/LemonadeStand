@@ -11,7 +11,9 @@ namespace LemonadeStand
        public List<Day> days;
        public Player player;
        public Store store;
-        Random rand = new Random();
+       Random rand = new Random();
+       public int temp;
+        
 
 
         public Game()
@@ -35,7 +37,7 @@ namespace LemonadeStand
         public void Run()
         {
             CreateShowDayByWeather();
-            Customer customer = new Customer();
+            Customer customer = new Customer(temp,rand);
             customer.CreateRandomCustomerName();
             Recipe recipe = new Recipe();
             recipe.PrepareRecipe();
