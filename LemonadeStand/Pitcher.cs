@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Pitcher
+    public class Pitcher
     {
         static int cupsLeftInPitcher = 10;
-    public Pitcher()
+        public Pitcher()
         {
             cupsLeftInPitcher = 0;
         }

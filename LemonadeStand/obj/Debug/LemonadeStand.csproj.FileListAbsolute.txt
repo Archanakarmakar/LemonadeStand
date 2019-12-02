@@ -1,1 +1,6 @@
 C:\Users\karma\Desktop\dev\C#\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.csprojAssemblyReference.cache
+C:\Users\karma\Desktop\dev\C#\LemonadeStand\LemonadeStand\bin\Debug\LemonadeStand.exe.config
+C:\Users\karma\Desktop\dev\C#\LemonadeStand\LemonadeStand\bin\Debug\LemonadeStand.exe
+C:\Users\karma\Desktop\dev\C#\LemonadeStand\LemonadeStand\bin\Debug\LemonadeStand.pdb
+C:\Users\karma\Desktop\dev\C#\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.exe
+C:\Users\karma\Desktop\dev\C#\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.pdb

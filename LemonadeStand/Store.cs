@@ -67,13 +67,13 @@ namespace LemonadeStand
             }
         }
 
-        private double CalculateTransactionAmount(int itemCount, double itemPricePerUnit)
+        public double CalculateTransactionAmount(int itemCount, double itemPricePerUnit)
         {
             double transactionAmount = itemCount * itemPricePerUnit;
             return transactionAmount;
         }
 
-        private void PerformTransaction(Wallet wallet, double transactionAmount)
+        public void PerformTransaction(Wallet wallet, double transactionAmount)
         {
             wallet.PayMoneyForItems(transactionAmount);
         }

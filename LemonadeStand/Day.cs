@@ -10,22 +10,13 @@ namespace LemonadeStand
     {
         public Weather weather;
         List<Customer> customers;
-        int dayNumber;
         Random random;
-        public string day1;
-
         public Day()
         {
             random = new Random();
             weather = new Weather(random);
             customers = new List<Customer>();
-
-            //CreateCustomers();
-
         }
-
-
-
     }
 }
 
