@@ -29,6 +29,10 @@ namespace LemonadeStand
             return money;
         }
        
+        public void AddMoneytoWallet(double amount)
+        {
+            money += amount;
+        }
     }
 }
 

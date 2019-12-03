@@ -39,18 +39,30 @@ namespace LemonadeStand
 
         public void Run()
         {
-           
+
             for (int i = 1; i < days.Count; i++)
             {
                 Console.WriteLine("You are on day " + i + " of 7");
+                player.recipe.PrepareRecipe();
                 store.SellIceCubes(player);
                 store.SellLemons(player);
                 store.SellSugarCubes(player);
                 player.recipe.PrepareRecipe();
-                totalsold = days[i - 1].SimulateDay(player.recipe);
-                Console.WriteLine("totalsold",totalsold);
+                totalsold+= days[i - 1].SimulateDay(player);
+                Console.WriteLine("totalsold...." +totalsold);
 
 
+            }
+
+        }
+        private void PlayAgainOption()
+        {
+            Console.WriteLine("Would you like to play again?");
+            string userInput = Console.ReadLine();
+            if (userInput == "yes" || userInput == "Yes" || userInput == "y" || userInput == "Y")
+            {
+                Console.Clear();
+                // totalsold =days[i-1].SimulateDay(player);
             }
         }
     }

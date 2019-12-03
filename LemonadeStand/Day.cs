@@ -93,42 +93,17 @@ namespace LemonadeStand
                     bool didChooseToBuy = customer.MakePurchaseDecision(weather, player.recipe);
                     if (didChooseToBuy)
                     {
-                        
-                        
+                        player.wallet.AddMoneytoWallet(player.recipe.pricePerCup);
+                        player.pitcher.cupsLeftInPitcher--;
                         sellcount++;
                         // give money to player
                         //take cup from pitcher
                     }
                 }
-                
+
             }
             return sellcount;
         }
-        //if (temperature >= 90)
-        //{
-        //    Console.WriteLine("Mostly sunny!");
-        //}
-        //else if (temperature >= 60 && temperature < 90)
-        //{
-        //    Console.WriteLine("partly sunny!");
-        //}
-        //else if (temperature >= 30 && temperature < 60)
-        //{
-        //    Console.WriteLine("partly cloudy  and Rainy!");
-        //}
-        //else if (temperature >= 20 && temperature < 30)
-        //{
-        //    Console.WriteLine("ThunderStroms and Rainy!");
-        //}
-        //else if (temperature >= 0 && temperature < 0)
-        //{
-        //    Console.WriteLine("Freezing!");
-        //}
-        //else
-        //{
-        //    Console.WriteLine(".............!");
-        //}
-
 
         private void GetCustomers(int customerCount)
         {
@@ -144,5 +119,5 @@ namespace LemonadeStand
 }
 
 
-    
+
 

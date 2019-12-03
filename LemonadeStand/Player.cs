@@ -17,7 +17,7 @@ namespace LemonadeStand
         // constructor (SPAWNER)
         public Player()
         {
-            recipe.PrepareRecipe();
+            
         }
 
         // member methods (CAN DO)

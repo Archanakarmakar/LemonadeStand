@@ -8,7 +8,7 @@ namespace LemonadeStand
 {
     public class Pitcher
     {
-        static int cupsLeftInPitcher;
+        public int cupsLeftInPitcher;
         public int numberOfPitchers;
         public Pitcher()
         {
