@@ -9,12 +9,13 @@ namespace LemonadeStand
     public class Pitcher
     {
         static int cupsLeftInPitcher;
+        public int numberOfPitchers;
         public Pitcher()
         {
             cupsLeftInPitcher = 0;
         }
 
-        public static void CreatePitcher(Inventory inventory, Recipe recipe)
+        public void CreatePitcher(Inventory inventory, Recipe recipe)
         {
             inventory.lemons.RemoveRange(0, recipe.amountOfLemons);
             inventory.iceCubes.RemoveRange(0, recipe.amountOfIceCubes);
@@ -22,5 +23,15 @@ namespace LemonadeStand
             inventory.cups.RemoveRange(0, cupsLeftInPitcher);
             cupsLeftInPitcher = 10;
         }
+        public int ChooseNumberOfPitchers()
+        {
+            Console.WriteLine("How many pitchers do you want to make?");
+                     
+                int numberOfPitchers = int.Parse(Console.ReadLine());
+                this.numberOfPitchers = numberOfPitchers;
+                return this.numberOfPitchers;
+               
+        }
     }
+
 }

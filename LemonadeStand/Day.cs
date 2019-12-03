@@ -14,7 +14,7 @@ namespace LemonadeStand
         Random random;
         public int temperature;
         public string condition;
-        int dayCount = 7;
+
         public Day()
         {
             random = new Random();
@@ -31,7 +31,7 @@ namespace LemonadeStand
         public void DisplayWeather()
         {
 
-            Console.WriteLine("Looks like it is " + condition + " outside. of Day :" + dayCount + "With a high of " + temperature + ".");
+            Console.WriteLine("Looks like it is " + condition + " outside. With a high of " + temperature + ".");
             Console.ReadLine();
 
         }
@@ -74,37 +74,62 @@ namespace LemonadeStand
         }
 
 
-        public void SimulateDay()
+        public double SimulateDay(Player player)
         {
-            Console.WriteLine("Lemonade Recipe Game\n\n");
-            // Player.PrepareRecipe();
-            Console.WriteLine("\n\n Cup Per Pitcher:\n[1]Go to store \n\n[2] Play Again");
-            string userInput = Console.ReadLine();
-            foreach(Customer customer in customers)
-            { 
-            if (userInput != "1" && userInput != "2")
+            double sellcount = 0;
+
+            foreach (Customer customer in customers)
             {
-                Console.Clear();
-                //RecipeMenu();
-                return;
-            }
-            int userInputNum = int.Parse(userInput);
-                switch (userInputNum)
+                //Pitcher pitcher = new Pitcher();
+
+                if (player.inventory.lemons.Count >= player.recipe.amountOfLemons || player.inventory.sugarCubes.Count >= player.recipe.amountOfSugarCubes || player.inventory.iceCubes.Count >= player.recipe.amountOfIceCubes || player.inventory.cups.Count >= player.recipe.pricePerCup)
                 {
-                    case 1:
-                        //Console.Clear();
-                        DisplayWeather();
-                       // double totalprice = Player.Store.CalculateTransactionAmount(itemcount, itemPricePerUnit);
-                        break;
+                    // create pitcher
+                    // check if player has enough inventory to even make a pitcher or not
+                    // if player does not have enough inventory, end the day
 
-                    case 2:
-                       // Console.Clear();
-                        PlayAgainOption();
-                        break;
+                    player.pitcher.CreatePitcher(player.inventory, player.recipe);
 
+                    bool didChooseToBuy = customer.MakePurchaseDecision(weather, player.recipe);
+                    if (didChooseToBuy)
+                    {
+                        
+                        
+                        sellcount++;
+                        // give money to player
+                        //take cup from pitcher
+                    }
                 }
+                
             }
+            return sellcount;
         }
+        //if (temperature >= 90)
+        //{
+        //    Console.WriteLine("Mostly sunny!");
+        //}
+        //else if (temperature >= 60 && temperature < 90)
+        //{
+        //    Console.WriteLine("partly sunny!");
+        //}
+        //else if (temperature >= 30 && temperature < 60)
+        //{
+        //    Console.WriteLine("partly cloudy  and Rainy!");
+        //}
+        //else if (temperature >= 20 && temperature < 30)
+        //{
+        //    Console.WriteLine("ThunderStroms and Rainy!");
+        //}
+        //else if (temperature >= 0 && temperature < 0)
+        //{
+        //    Console.WriteLine("Freezing!");
+        //}
+        //else
+        //{
+        //    Console.WriteLine(".............!");
+        //}
+
+
         private void GetCustomers(int customerCount)
         {
 
@@ -115,16 +140,9 @@ namespace LemonadeStand
             }
 
         }
-        private void PlayAgainOption()
-        {
-            Console.WriteLine("Would you like to play again?");
-            string userInput = Console.ReadLine();
-            if (userInput == "yes" || userInput == "Yes" || userInput == "y" || userInput == "Y")
-            {
-                Console.Clear();
-                SimulateDay();
-            }
-        }
     }
 }
+
+
+    
 

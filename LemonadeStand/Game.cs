@@ -8,13 +8,13 @@ namespace LemonadeStand
 {
     public class Game
     {
-       public List<Day> days;
-       public Player player;
-       public Store store;
-       Random rand = new Random();
-       public int temp;
-       public int daysCount = 7;
-        
+        public List<Day> days;
+        public Player player;
+        public Store store;
+        Random rand = new Random();
+        public int temp;
+        public int daysCount = 7;
+        public double totalsold = 0;
 
 
         public Game()
@@ -28,25 +28,28 @@ namespace LemonadeStand
         {
             for (int i = 1; i < days.Count; i++)
             {
-                
+
                 Console.WriteLine(days[i].weather.condition);
-                
+
 
             }
         }
-        
+
         // 
-        
+
         public void Run()
         {
+           
             for (int i = 1; i < days.Count; i++)
             {
                 Console.WriteLine("You are on day " + i + " of 7");
-                
-                //store.SellIceCubes(player);
-                //store.SellLemons(player);
-                //store.SellSugarCubes(player);
-               days[i - 1].SimulateDay();
+                store.SellIceCubes(player);
+                store.SellLemons(player);
+                store.SellSugarCubes(player);
+                player.recipe.PrepareRecipe();
+                totalsold = days[i - 1].SimulateDay(player.recipe);
+                Console.WriteLine("totalsold",totalsold);
+
 
             }
         }

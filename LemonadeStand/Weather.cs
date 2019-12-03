@@ -77,7 +77,7 @@ namespace LemonadeStand
                     temparature = random.Next(36, 43);
                     break;
                 case "Mostly Sunny":
-                    temparature = random.Next(37, 80);
+                    temparature = random.Next(37, 90);
                     break;
                 case "Rainy":
                     temparature = random.Next(67, 72);

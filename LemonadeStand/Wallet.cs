@@ -23,9 +23,12 @@ namespace LemonadeStand
             money = 20.00;
         }
 
-        public void PayMoneyForItems(double transactionAmount)
+        public double PayMoneyForItems(double transactionAmount)
         {
             money -= transactionAmount;
+            return money;
         }
+       
     }
 }
+

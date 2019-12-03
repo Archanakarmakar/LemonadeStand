@@ -33,6 +33,7 @@ namespace LemonadeStand
                 Lemon lemon = new Lemon();
                 lemons.Add(lemon);
             }
+            Console.WriteLine("You currently have {0} lemons.\n\n", lemons.Count);
         }
 
         public void AddSugarCubesToInventory(int numberOfSugarCubes)
@@ -42,6 +43,7 @@ namespace LemonadeStand
                 SugarCube sugarCube = new SugarCube();
                 sugarCubes.Add(sugarCube);
             }
+            Console.WriteLine("You currently have {0} SugarCube.\n\n", sugarCubes.Count);
         }
 
         public void AddIceCubesToInventory(int numberOfIceCubes)
@@ -51,6 +53,7 @@ namespace LemonadeStand
                 IceCube iceCube = new IceCube();
                 iceCubes.Add(iceCube);
             }
+            Console.WriteLine("You currently have {0} IceCube.\n\n", iceCubes.Count);
         }
 
         public void AddCupsToInventory(int numberOfCups)
@@ -60,6 +63,7 @@ namespace LemonadeStand
                 Cup cup = new Cup();
                 cups.Add(cup);
             }
+            Console.WriteLine("You currently have {0} SugarCube.\n\n", cups.Count);
         }
     }
 }
