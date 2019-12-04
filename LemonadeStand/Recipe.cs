@@ -17,6 +17,7 @@ namespace LemonadeStand
             this.amountOfLemons = 0;
             this.amountOfIceCubes = 0;
             this.amountOfSugarCubes = 0;
+            this.pricePerCup = 0.0;
 
         }
         

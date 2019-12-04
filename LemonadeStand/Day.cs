@@ -18,6 +18,8 @@ namespace LemonadeStand
         public Day()
         {
             random = new Random();
+            RunDay();
+
         }
         public void RunDay()
         {
@@ -27,6 +29,7 @@ namespace LemonadeStand
             customers = new List<Customer>();
             temperature = weather.GetTemp();
             ChooseNumberOfCustomers(condition);
+
         }
         public void DisplayWeather()
         {
@@ -42,28 +45,28 @@ namespace LemonadeStand
             switch (condition)
             {
                 case "Rainy":
+                    customerCount = 10;
+                    GetCustomers(10);
+                    break;
+                case "Mostly cloudy":
                     customerCount = 30;
                     GetCustomers(30);
                     break;
-                case "Mostly cloudy":
+                case "Mostly Sunny":
                     customerCount = 60;
                     GetCustomers(60);
                     break;
-                case "Mostly Sunny":
-                    customerCount = 120;
-                    GetCustomers(120);
-                    break;
                 case "Partly sunny":
-                    customerCount = 70;
-                    GetCustomers(70);
+                    customerCount = 40;
+                    GetCustomers(40);
                     break;
                 case "Partly cloudy":
-                    customerCount = 50;
-                    GetCustomers(50);
+                    customerCount = 30;
+                    GetCustomers(30);
                     break;
                 case "Freezing":
-                    customerCount = 20;
-                    GetCustomers(20);
+                    customerCount = 5;
+                    GetCustomers(5);
                     break;
                 case "Thunder storms":
                     customerCount = 10;
@@ -76,13 +79,13 @@ namespace LemonadeStand
 
         public double SimulateDay(Player player)
         {
-            double sellcount = 0;
+            double sellAmount = 0;
 
-            foreach (Customer customer in customers)
+            foreach(Customer customer in customers)
             {
                 //Pitcher pitcher = new Pitcher();
 
-                if (player.inventory.lemons.Count >= player.recipe.amountOfLemons || player.inventory.sugarCubes.Count >= player.recipe.amountOfSugarCubes || player.inventory.iceCubes.Count >= player.recipe.amountOfIceCubes || player.inventory.cups.Count >= player.recipe.pricePerCup)
+                if (player.inventory.lemons.Count >= player.recipe.amountOfLemons && player.inventory.sugarCubes.Count >= player.recipe.amountOfSugarCubes && player.inventory.iceCubes.Count >= player.recipe.amountOfIceCubes)
                 {
                     // create pitcher
                     // check if player has enough inventory to even make a pitcher or not
@@ -91,18 +94,19 @@ namespace LemonadeStand
                     player.pitcher.CreatePitcher(player.inventory, player.recipe);
 
                     bool didChooseToBuy = customer.MakePurchaseDecision(weather, player.recipe);
-                    if (didChooseToBuy)
+                    if (didChooseToBuy == true)
                     {
+                        sellAmount += player.recipe.pricePerCup;
                         player.wallet.AddMoneytoWallet(player.recipe.pricePerCup);
                         player.pitcher.cupsLeftInPitcher--;
-                        sellcount++;
+                        
                         // give money to player
                         //take cup from pitcher
                     }
                 }
 
             }
-            return sellcount;
+            return sellAmount;
         }
 
         private void GetCustomers(int customerCount)

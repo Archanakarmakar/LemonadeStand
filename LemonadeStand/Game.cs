@@ -14,12 +14,14 @@ namespace LemonadeStand
         Random rand = new Random();
         public int temp;
         public int daysCount = 7;
-        public double totalsold = 0;
+        public double totalsold = 0.0;
+        public Day day;
 
 
         public Game()
         {
-            days = new List<Day>() { new Day(), new Day(), new Day(), new Day(), new Day(), new Day(), new Day() };
+            day = new Day();
+            days = new List<Day>() { day , day, day, day, day, day, day};
             player = new Player();
             store = new Store();
 
@@ -35,7 +37,7 @@ namespace LemonadeStand
             }
         }
 
-        // 
+        
 
         public void Run()
         {
@@ -43,14 +45,15 @@ namespace LemonadeStand
             for (int i = 1; i < days.Count; i++)
             {
                 Console.WriteLine("You are on day " + i + " of 7");
+                days[i].DisplayWeather();
                 player.recipe.PrepareRecipe();
                 store.SellIceCubes(player);
                 store.SellLemons(player);
                 store.SellSugarCubes(player);
-                player.recipe.PrepareRecipe();
-                totalsold+= days[i - 1].SimulateDay(player);
+                store.SellCups(player);
+                
+                totalsold += days[i - 1].SimulateDay(player);
                 Console.WriteLine("totalsold...." +totalsold);
-
 
             }
 

@@ -13,10 +13,6 @@ namespace LemonadeStand
         {
             Game mygame = new Game();
              mygame.Run();
-            //Day day = new Day();
-           // day.RunDay();
-           // day.DisplayWeather();
-           // mygame.Run();
         }
     }
 }
