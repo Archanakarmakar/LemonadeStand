@@ -21,7 +21,7 @@ namespace LemonadeStand
         public Game()
         {
             day = new Day();
-            days = new List<Day>() { day , day, day, day, day, day, day};
+            days = new List<Day>() { day, day, day, day, day, day, day };
             player = new Player();
             store = new Store();
 
@@ -37,7 +37,7 @@ namespace LemonadeStand
             }
         }
 
-        
+
 
         public void Run()
         {
@@ -46,14 +46,17 @@ namespace LemonadeStand
             {
                 Console.WriteLine("You are on day " + i + " of 7");
                 days[i].DisplayWeather();
+                Console.WriteLine("Please hit [enter] to go to the Inventory Menu..");
                 player.recipe.PrepareRecipe();
+
                 store.SellIceCubes(player);
                 store.SellLemons(player);
                 store.SellSugarCubes(player);
                 store.SellCups(player);
-                
+
                 totalsold += days[i - 1].SimulateDay(player);
-                Console.WriteLine("totalsold...." +totalsold);
+                Console.WriteLine("totalsold of per day...." + totalsold);
+                PlayAgainOption();
 
             }
 

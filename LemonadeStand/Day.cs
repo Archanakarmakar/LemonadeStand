@@ -81,7 +81,7 @@ namespace LemonadeStand
         {
             double sellAmount = 0;
 
-            foreach(Customer customer in customers)
+            foreach (Customer customer in customers)
             {
                 //Pitcher pitcher = new Pitcher();
 
@@ -99,7 +99,7 @@ namespace LemonadeStand
                         sellAmount += player.recipe.pricePerCup;
                         player.wallet.AddMoneytoWallet(player.recipe.pricePerCup);
                         player.pitcher.cupsLeftInPitcher--;
-                        
+
                         // give money to player
                         //take cup from pitcher
                     }

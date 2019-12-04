@@ -39,15 +39,15 @@ namespace LemonadeStand
             }
             else if (weather.condition == "Mostly cloudy" || weather.condition == "Partly cloudy" && weather.temparature >= 30 && recipe.pricePerCup < 1.00)
             {
-                return false;
+                return true;
             }
             else if (weather.condition == "Rainy" || weather.condition == "Freezing" && weather.temparature < 60|| weather.temparature >= 0 && recipe.pricePerCup < 2.00)
             {
-                return false;
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
 
         }
